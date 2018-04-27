@@ -10,26 +10,34 @@ public class Items {
 	public Items() {
 		treasureLocation = makePosition(10);									//set locations
 		keyLocation = makePosition(5);
-		while (keyLocation == treasureLocation) {
+		while (keyLocation[0] == treasureLocation[0] && keyLocation[1] == treasureLocation[1]) {
 			keyLocation = makePosition(5);
 		}
 		mapLocation = makePosition(2);
-		while (mapLocation == treasureLocation || mapLocation == keyLocation) {
+		while ((mapLocation[0] == treasureLocation[0] && mapLocation[1] == treasureLocation[1]) ||
+				(mapLocation[0] == keyLocation[0] && mapLocation[1] == keyLocation[1])) {
 			mapLocation = makePosition(2);
 		}
 		gogglesLocation = makePosition(5);
-		while (gogglesLocation == treasureLocation || gogglesLocation == keyLocation || gogglesLocation == mapLocation) {
+		while ((gogglesLocation[0] == treasureLocation[0] && gogglesLocation[1] == treasureLocation[1]) ||
+				(gogglesLocation[0] == keyLocation[0] && gogglesLocation[1] == keyLocation[1]) ||
+				(gogglesLocation[0] == mapLocation[0] && gogglesLocation[1] == mapLocation[1])) {
 			gogglesLocation = makePosition(5);
 		}
 		sign1Location = makePosition(3);
-		while (sign1Location == treasureLocation || sign1Location == keyLocation || sign1Location == mapLocation
-				|| sign1Location == gogglesLocation) {
+		while ((sign1Location[0] == treasureLocation[0] && sign1Location[1] == treasureLocation[1]) ||
+				(sign1Location[0] == keyLocation[0] && sign1Location[1] == keyLocation[1]) ||
+				(sign1Location[0] == mapLocation[0] && sign1Location[1] == mapLocation[1]) || 
+				(sign1Location[0] == gogglesLocation[0] && sign1Location[1] == gogglesLocation[1])) {
 			sign1Location = makePosition(3);
 		}
 		sign2Location = makePosition(3);
 		
-		while (sign2Location == treasureLocation || sign2Location == keyLocation || sign2Location == mapLocation
-				|| sign2Location == gogglesLocation || sign2Location == sign1Location) {
+		while ((sign2Location[0] == treasureLocation[0] && sign2Location[1] == treasureLocation[1]) ||
+				(sign2Location[0] == keyLocation[0] && sign2Location[1] == keyLocation[1]) ||
+				(sign2Location[0] == mapLocation[0] && sign2Location[1] == mapLocation[1]) ||
+				(sign2Location[0] == gogglesLocation[0] && sign2Location[1] == gogglesLocation[1]) ||
+				(sign2Location[0] == sign1Location[0] && sign2Location[1] == sign1Location[1])) {
 			sign2Location = makePosition(3);
 		}
 	}
